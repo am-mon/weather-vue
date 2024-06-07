@@ -2,18 +2,22 @@
     <div class="container bg-success-subtle bg-gradient p-md-5 px-3 py-5">
         <h1 class="mb-5 text-success">Search Current Weather</h1>
         <form @submit.prevent="handleSubmit" class="row text-start mb-4" novalidate>
-            <div class="col-12 col-md-5 my-1">
-                <input type="text" class="form-control w-100 py-3" placeholder="Enter Country Code"
+            <div class="col-12 col-md-4 my-1">
+                <input type="text" class="form-control w-100 py-3 text-uppercase" placeholder="Enter Country Code"
                     v-model="form.country" id="country" />
                 <p v-if="form_errors.country" class="mt-2">{{ form_errors.country }}</p>
             </div>
-            <div class="col-12 col-md-5 my-1">
-                <input type="text" class="form-control w-100 py-3" placeholder="Enter City" v-model="form.city"
-                    id="city" />
+            <div class="col-12 col-md-4 my-1">
+                <input type="text" class="form-control w-100 py-3 text-capitalize" placeholder="Enter City"
+                    v-model="form.city" id="city" />
                 <p v-if="form_errors.city" class="mt-2">{{ form_errors.city }}</p>
             </div>
             <div class="col-12 col-md-2 my-1">
-                <button type="submit" class="form-control w-100 py-3 btn bg-success text-white fw-bold">Submit</button>
+                <button type="submit" class="form-control w-100 py-3 btn bg-success text-white fw-bold">Search</button>
+            </div>
+            <div class="col-12 col-md-2 my-1">
+                <button class="form-control w-100 py-3 btn bg-success text-white fw-bold"
+                    @click.prevent="clearForm()">Clear Search</button>
             </div>
         </form>
 
@@ -241,6 +245,14 @@ export default {
             };
             this.form_errors = {};
         },
+        clearForm() {
+            this.form = {
+                city: '',
+                country: '',
+            };
+            this.data = null;
+            this.form_errors = {};
+        },
         getDynamicCountryTime(responseTimezone) {
             const date = new Date();
             
@@ -292,5 +304,8 @@ export default {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+input#country::-webkit-input-placeholder {
+    text-transform: none;
 }
 </style>
