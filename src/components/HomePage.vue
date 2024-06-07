@@ -12,10 +12,10 @@
                     v-model="form.city" id="city" />
                 <p v-if="form_errors.city" class="mt-2">{{ form_errors.city }}</p>
             </div>
-            <div class="col-12 col-md-2 my-1">
+            <div class="col-6 col-md-2 my-1 pe-1">
                 <button type="submit" class="form-control w-100 py-3 btn bg-success text-white fw-bold">Search</button>
             </div>
-            <div class="col-12 col-md-2 my-1">
+            <div class="col-6 col-md-2 my-1 ps-1">
                 <button class="form-control w-100 py-3 btn bg-success text-white fw-bold"
                     @click.prevent="clearForm()">Clear Search</button>
             </div>
