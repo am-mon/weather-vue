@@ -17,7 +17,7 @@
             </div>
             <div class="col-6 col-md-2 my-1 ps-1">
                 <button class="form-control w-100 py-3 btn bg-success text-white fw-bold"
-                    @click.prevent="clearForm()">Clear Search</button>
+                    @click.prevent="clearSearch()">Clear Search</button>
             </div>
         </form>
 
@@ -245,7 +245,7 @@ export default {
             };
             this.form_errors = {};
         },
-        clearForm() {
+        clearSearch() {
             this.form = {
                 city: '',
                 country: '',
