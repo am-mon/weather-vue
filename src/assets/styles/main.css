@@ -1,0 +1,15 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.text-color-01 {
+  color: #c5b2ff;
+}
+
+.bg-color-01 {
+  background: #6457fc;
+}
+.bg-color-01:hover {
+  background: #c5b2ff;
+}
